@@ -21,12 +21,6 @@ func PageRoutes(app *fiber.App) {
 		})
 	})
 
-	app.Get("/docs", func(c *fiber.Ctx) error {
-		return c.Render("docs", fiber.Map{
-			"Title": "Affine - Docs",
-		})
-	})
-
 	app.Get("/support", func(c *fiber.Ctx) error {
 		return c.Render("support", fiber.Map{
 			"Title": "Affine - Support",
@@ -36,6 +30,11 @@ func PageRoutes(app *fiber.App) {
 	app.Get("/contact", func(c *fiber.Ctx) error {
 		return c.Render("contact", fiber.Map{
 			"Title": "Affine - Contact",
+		})
+	})
+	app.Get("/login", func(c *fiber.Ctx) error {
+		return c.Render("login", fiber.Map{
+			"Title": "Affine - Login",
 		})
 	})
 

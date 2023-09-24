@@ -1,7 +1,10 @@
-<header class="w-full border-b border-gray-900">
+<header class="w-full border-gray-900">
     <div class="custom-container flex items-center justify-between h-[6rem]">
         <a class="text-xl font-semibold tracking-wide" href="/">Affine</a>
         {{> "partials/nav" }}
-        {{> "components/button-fill" text="Log In" }}
+        <a href="/login"
+            class="bg-transparent border border-gray-700 active:scale-[0.98] text-white px-5 py-2 rounded-[2rem] flex items-center gap-2">
+            Log In
+        </a>
     </div>
 </header>

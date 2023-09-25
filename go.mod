@@ -5,6 +5,7 @@ go 1.21.1
 require (
 	github.com/gofiber/fiber/v2 v2.49.2
 	github.com/gofiber/template/handlebars/v2 v2.1.6
+	github.com/joho/godotenv v1.5.1
 )
 
 require (

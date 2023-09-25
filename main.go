@@ -2,7 +2,9 @@ package main
 
 import (
 	"log"
+	"os"
 
+	"github.com/RahulMj21/affine-clone/config"
 	"github.com/RahulMj21/affine-clone/routes"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
@@ -10,6 +12,13 @@ import (
 )
 
 func main() {
+	config.LoadEnv()
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "5000"
+	}
+
 	engine := handlebars.New("./views", ".hbs")
 	engine.Reload(true)
 
@@ -24,5 +33,5 @@ func main() {
 
 	routes.PageRoutes(app)
 
-	log.Fatal(app.Listen(":3000"))
+	log.Fatal(app.Listen(":" + port))
 }
